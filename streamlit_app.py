@@ -83,6 +83,5 @@ with col2:
         st.write("---")
         st.subheader("Personal projects")
         st.write("Undergraduate Research Project: Investigated the effects of camera models and settings on image "
-                 "classification accuracy, utilizing PyTorch, Python, and MATLAB. This project highlighted my ability "
-                 "to conduct thorough research and technical analysis.")
+                 "classification accuracy, utilizing PyTorch, Python, and MATLAB.")
         st.write("Development Projects: Created a personal links dashboard and a webpage using Python and Streamlit.")
