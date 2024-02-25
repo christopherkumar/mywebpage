@@ -4,7 +4,6 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 
@@ -25,11 +24,9 @@ local_css("style/style.css")
 # ---- LOAD ASSETS
 lottie_coding = load_lottieurl("https://lottie.host/7480ae41-f96f-4cd6-a7ba-8b243288bf31/8FwbyQWR0b.json")
 
-st.write("## Using Streamlit Columns for Centering")
-col1, col2, col3 = st.columns([1,6,1])
+
+col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
-    st.header("This is centered!")
-    st.write("This text is centered using Streamlit's column layout.")
     # ---- HEADER SECTION
     with st.container():
         st.write("---")
@@ -45,8 +42,7 @@ with col2:
             st.write("[Instagram >](https://www.instagram.com/christopherkumar812/)")
         with right_column:
             st.image(Image.open('images/dp.png'), width=300)
-    
-    
+
     # ---- ABOUT ME
     with st.container():
         st.write("---")
@@ -63,7 +59,7 @@ with col2:
             st.write("University of the South Pacific - Foundation Science Programme.")
         with right_column:
             st_lottie(lottie_coding, width=300, key="coding")
-    
+
     # ---- EXPERIENCE
     with st.container():
         st.write("---")
@@ -81,7 +77,7 @@ with col2:
                  "Arduino and AutoCAD.")
         st.write("- Software Expertise: Proficient with the Microsoft Office Suite, emphasizing my versatility in "
                  "technical and administrative tasks.")
-    
+
     # ---- PROJECTS
     with st.container():
         st.write("---")
