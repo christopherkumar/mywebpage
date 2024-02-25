@@ -1,8 +1,9 @@
 import json
-
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
+from PIL import Image
+
 
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
@@ -14,7 +15,6 @@ def load_lottieurl(url):
     return r.json()
 
 
-# Use local CSS
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -23,17 +23,25 @@ def local_css(file_name):
 local_css("style/style.css")
 
 # ---- LOAD ASSETS
-lottie_coding = "https://lottie.host/7480ae41-f96f-4cd6-a7ba-8b243288bf31/8FwbyQWR0b.json"
+lottie_coding = load_lottieurl("https://lottie.host/7480ae41-f96f-4cd6-a7ba-8b243288bf31/8FwbyQWR0b.json")
+
 
 # ---- HEADER SECTION
 with st.container():
-    st.subheader("Hi, I am Christopher :wave:")
-    st.title("A Computer Systems Engineering Graduate from Fiji")
-    st.write("I am currently seeking out graduate and internship opportunities to improve upon my technical skillset, "
-             "whilst in a professional environment.")
-    st.write("[LinkedIn >](https://www.linkedin.com/in/christopher-kumar-26b5792b1/)")
-    st.write("[GitHub >](https://github.com/christopherkumar)")
-    st.write("[Instagram >](https://www.instagram.com/christopherkumar812/)")
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.subheader("Hi, I am Christopher :wave:")
+        st.title("A Computer Systems Engineering Graduate from Fiji")
+        st.write(
+            "I am currently seeking out graduate and internship opportunities to improve upon my technical skillset, "
+            "whilst in a professional environment.")
+        st.write("[LinkedIn >](https://www.linkedin.com/in/christopher-kumar-26b5792b1/)")
+        st.write("[GitHub >](https://github.com/christopherkumar)")
+        st.write("[Instagram >](https://www.instagram.com/christopherkumar812/)")
+    with right_column:
+        st.image(Image.open('images/dp.png'), width=300)
+
 
 # ---- ABOUT ME
 with st.container():
@@ -50,7 +58,7 @@ with st.container():
                  " - Computer Systems Engineering. ")
         st.write("University of the South Pacific - Foundation Science Programme.")
     with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
+        st_lottie(lottie_coding, width=300, key="coding")
 
 # ---- EXPERIENCE
 with st.container():
@@ -77,5 +85,4 @@ with st.container():
     st.write("Undergraduate Research Project: Investigated the effects of camera models and settings on image "
              "classification accuracy, utilizing PyTorch, Python, and MATLAB. This project highlighted my ability "
              "to conduct thorough research and technical analysis.")
-    st.write("Development Projects: Created a personal links dashboard and a webpage using Python and Streamlit, "
-             "demonstrating my initiative to employ technology in practical, user-oriented applications.")
+    st.write("Development Projects: Created a personal links dashboard and a webpage using Python and Streamlit.")
