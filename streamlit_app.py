@@ -82,6 +82,6 @@ with col2:
     with st.container():
         st.write("---")
         st.subheader("Personal projects")
-        st.write("Undergraduate Research Project: Investigated the effects of camera models and settings on image "
+        st.write("- Undergraduate Research Project: Investigated the effects of camera models and settings on image "
                  "classification accuracy, utilizing PyTorch, Python, and MATLAB.")
-        st.write("Development Projects: Created a personal links dashboard and a webpage using Python and Streamlit.")
+        st.write("- Development Projects: Created a personal links dashboard and a webpage using Python and Streamlit.")
